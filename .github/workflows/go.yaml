@@ -25,6 +25,8 @@ jobs:
 #        go get -u golang.org/x/lint/golint
 #        ~/go/bin/golint ./...
     - name: TEST go vet
-      run: go vet ./backend/...
+      run: go vet ./...
+      working-directory: ./backend
     - name: TEST go test
-      run: go test ./backend/... -race
+      run: go test ./... -race
+      working-directory: ./backend
